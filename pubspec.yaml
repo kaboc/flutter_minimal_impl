@@ -1,0 +1,16 @@
+name: minimal_impl
+description: A new Flutter project.
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.1.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  animations: '>=1.0.0 <1.1.0'
+
+flutter:
+  uses-material-design: true
