@@ -52,6 +52,7 @@ class NotificationListenerBuilder<T extends Notification>
 
   final Widget Function(T, Widget) builder;
   final Widget child;
+  /// Whether to cancel the notification bubbling
   final bool cancel;
 
   @override
