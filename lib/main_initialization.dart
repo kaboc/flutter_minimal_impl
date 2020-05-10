@@ -55,7 +55,7 @@ class App extends StatefulWidget {
 }
 
 class _AppState extends State<App> {
-  final _navigationKey = GlobalKey<NavigatorState>();
+  final _navigatorKey = GlobalKey<NavigatorState>();
   UserData _prevUserData;
 
   @override
@@ -80,9 +80,9 @@ class _AppState extends State<App> {
       print('User state changed.');
 
       userModel.data == UserData.none
-          ? _navigationKey.currentState
+          ? _navigatorKey.currentState
               .pushAndRemoveUntil<void>(LoginScreen.route(), (_) => false)
-          : _navigationKey.currentState
+          : _navigatorKey.currentState
               .pushAndRemoveUntil<void>(HomeScreen.route(), (_) => false);
       _prevUserData = userModel.data;
     }
@@ -107,7 +107,7 @@ class _AppState extends State<App> {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      navigatorKey: _navigationKey,
+      navigatorKey: _navigatorKey,
       onGenerateRoute: (settings) => InitScreen.route(),
     );
   }
