@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 class InitScreen extends StatelessWidget {
-  const InitScreen();
+  const InitScreen._();
 
   static Route<dynamic> route() {
     return MaterialPageRoute<dynamic>(
-      builder: (_) => const InitScreen(),
+      builder: (_) => const InitScreen._(),
     );
   }
 

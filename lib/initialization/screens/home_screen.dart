@@ -5,11 +5,11 @@ import 'package:provider/provider.dart';
 import 'package:minimal_impl/initialization/user.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen();
+  const HomeScreen._();
 
   static Route<dynamic> route() {
     return MaterialPageRoute<dynamic>(
-      builder: (_) => const HomeScreen(),
+      builder: (_) => const HomeScreen._(),
     );
   }
 

@@ -38,10 +38,14 @@ class UserModel with ChangeNotifier {
     notifyListeners();
   }
 
-  Future<void> login() async {
+  Future<void> login({bool successful = true}) async {
     await Future<void>.delayed(const Duration(seconds: 2));
 
-    final user = User('1', 'John');
+    if (!successful) {
+      throw Exception('Login error');
+    }
+
+    final user = User('1', 'John Doe');
     _userData = UserData(user);
     notifyListeners();
   }
