@@ -23,7 +23,7 @@ class TransitionAnimations extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.brown,
         textTheme: const TextTheme(
-          body1: TextStyle(fontSize: 18.0),
+          bodyText2: TextStyle(fontSize: 18.0),
           button: TextStyle(fontSize: 16.0),
         ),
       ),
