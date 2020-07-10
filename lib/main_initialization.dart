@@ -10,6 +10,7 @@ import 'package:provider/provider.dart';
 
 import 'package:minimal_impl/initialization/db_helper.dart';
 import 'package:minimal_impl/initialization/init.dart';
+import 'package:minimal_impl/initialization/navigator.dart';
 import 'package:minimal_impl/initialization/screens/init_screen.dart';
 import 'package:minimal_impl/initialization/user.dart';
 
@@ -39,6 +40,9 @@ void main() {
     () async => runApp(
       MultiProvider(
         providers: [
+          Provider<AppNavigator>(
+            create: (_) => AppNavigator(),
+          ),
           Provider<DbHelper>(
             create: (_) => DbHelper(),
           ),
@@ -47,7 +51,7 @@ void main() {
           ),
           Provider<AppInit>(
             lazy: false,
-            create: (context) => AppInit(locator: context.read),
+            create: (context) => AppInit(locator: context.read)..init(),
             dispose: (_, init) => init.dispose(),
           ),
         ],
@@ -71,7 +75,7 @@ class App extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      navigatorKey: const GlobalObjectKey<NavigatorState>('navigator_key'),
+      navigatorKey: context.watch<AppNavigator>().navigatorKey,
       onGenerateRoute: (settings) => InitScreen.route(),
     );
   }

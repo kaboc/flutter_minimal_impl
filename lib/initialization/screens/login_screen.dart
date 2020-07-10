@@ -97,9 +97,7 @@ class LoginScreen extends StatelessWidget {
                             _showIndicatorAndError(context, loadingNotifier);
 
                             // Exception is caught by RunZonedGuard.
-                            context
-                                .read<UserModel>()
-                                .login(successful: false);
+                            context.read<UserModel>().login(successful: false);
                           },
                         ),
                       ],
