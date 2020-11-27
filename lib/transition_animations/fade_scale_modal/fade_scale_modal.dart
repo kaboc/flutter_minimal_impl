@@ -20,10 +20,7 @@ class FadeScaleModalScreen extends StatelessWidget {
             onPressed: () {
               showModal<void>(
                 context: context,
-                configuration: FadeScaleTransitionConfiguration(),
-                builder: (context) {
-                  return const _Modal();
-                },
+                builder: (context) => const _Modal(),
               );
             },
           ),

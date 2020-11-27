@@ -57,7 +57,7 @@ class _Button extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      child: OpenContainer(
+      child: OpenContainer<void>(
         transitionType: transitionType,
         openBuilder: openBuilder,
         closedBuilder: (_, openCallback) {
