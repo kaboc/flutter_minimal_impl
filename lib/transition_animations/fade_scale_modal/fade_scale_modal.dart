@@ -35,22 +35,25 @@ class _Modal extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 48.0, vertical: 76.0),
-      child: Stack(
-        children: <Widget>[
-          const Card(
-            child: ContentA('Modal'),
+    return Center(
+      child: Material(
+        child: SizedBox(
+          width: 250.0,
+          height: 300.0,
+          child: Stack(
+            children: <Widget>[
+              const ContentA('Modal'),
+              Positioned(
+                top: 6.0,
+                right: -14.0,
+                child: RawMaterialButton(
+                  child: const Icon(Icons.close, color: Colors.white),
+                  onPressed: () => Navigator.of(context).pop(),
+                ),
+              ),
+            ],
           ),
-          Positioned(
-            top: 6.0,
-            right: -14.0,
-            child: RawMaterialButton(
-              child: const Icon(Icons.close, color: Colors.white),
-              onPressed: () => Navigator.of(context).pop(),
-            ),
-          ),
-        ],
+        ),
       ),
     );
   }
